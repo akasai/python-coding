@@ -1,13 +1,6 @@
 def solution(dec):
-    stack = []
-    while dec > 0:
-        stack.append(str(dec % 2))
-        dec //= 2
-    stack.reverse()
-    return "".join(stack)
+    return bin(dec)[2:]
 
-
-# result = solution(10)
-# result = solution(27)
-result = solution(12345)
-print(result)
+print(solution(10))
+print(solution(27))
+print(solution(12345))

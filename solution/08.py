@@ -1,16 +1,11 @@
 def solution(str):
     stack = []
-
     for s in str:
-        if s == '(':
-            stack.append(s)
-        elif s == ')':
-            if len(stack) == 0:
-                return False
+        if s == ')' and stack[-1] == '(':
             stack.pop()
-    return len(stack) == 0
+        else:
+            stack.append(s)
+    return True if not stack else False
 
-
-# result = solution('(())()')
-result = solution('((())()')
-print(result)
+print(solution('(())()'))
+print(solution('((())()'))
